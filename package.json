@@ -1,9 +1,9 @@
 {
 	"name": "powpow-cli",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Pro-code development tool for Power Pages with TypeScript transpilation and local development server features.",
 	"type": "module",
-	"license": "MIT",
+	"license": "ISC",
 	"author": "Meidellkraft",
 	"repository": {
 		"type": "git",
