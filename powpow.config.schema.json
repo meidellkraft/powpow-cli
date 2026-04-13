@@ -1,0 +1,58 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "powpow config",
+	"description": "Configuration for the powpow build tool.",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string",
+			"description": "JSON Schema reference."
+		},
+		"version": {
+			"type": "string",
+			"description": "Config version number for future use."
+		},
+		"portalConfigPath": {
+			"type": "string",
+			"description": "Relative path from config file to the Power Pages portal config root directory.",
+			"examples": ["fagforeningsportalen", "portal"]
+		},
+		"sourceDir": {
+			"type": "string",
+			"description": "Relative path from config file to the TypeScript source directory.",
+			"default": "src",
+			"examples": ["src", "lib"]
+		},
+		"entryPoints": {
+			"type": "array",
+			"description": "Entry points mapping source files to Power Pages portal resource GUIDs.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"source": {
+						"type": "string",
+						"description": "Source file path relative to sourceDir, or a bare package specifier (e.g. \"lodash\") to bundle an installed package into a web-file.",
+						"examples": ["test.tsx", "someLib/index.ts", "lodash"]
+					},
+					"target": {
+						"type": "string",
+						"description": "Power Pages resource GUID (web-template or web-file).",
+						"pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+					}
+				},
+				"required": ["source", "target"],
+				"additionalProperties": false
+			}
+		},
+		"globals": {
+			"type": "object",
+			"description": "Map of package specifiers to globalThis variable names. Imports of these packages will be replaced with references to the corresponding global variable (UMD globals).",
+			"additionalProperties": {
+				"type": "string"
+			},
+			"examples": [{ "react": "React", "react-dom": "ReactDOM", "bootstrap": "bootstrap" }]
+		}
+	},
+	"required": ["portalConfigPath", "entryPoints"],
+	"additionalProperties": false
+}
