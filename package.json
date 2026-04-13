@@ -1,8 +1,25 @@
 {
-	"name": "@pstevju/powpow-cli",
+	"name": "powpow",
 	"version": "0.1.0",
-	"description": "Build tool for Power Pages portal development",
+	"description": "Pro-code development tool for Power Pages.",
 	"type": "module",
+	"license": "MIT",
+	"author": "Meidellkraft",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meidellkraft/powpow-cli.git"
+	},
+	"bugs": {
+		"url": "https://github.com/meidellkraft/powpow-cli/issues"
+	},
+	"homepage": "https://github.com/meidellkraft/powpow-cli#readme",
+	"keywords": [
+		"power-pages",
+		"power-platform",
+		"dataverse",
+		"build-tool",
+		"cli"
+	],
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"bin": {
@@ -16,7 +33,10 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"prepare": "tsc"
+		"prepack": "tsc"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"dependencies": {
 		"@inquirer/prompts": "^7.0.0",
