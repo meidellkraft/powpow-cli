@@ -1,3 +1,4 @@
+[![CI](https://github.com/meidellkraft/powpow-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/meidellkraft/powpow-cli/actions/workflows/ci.yml)
 [![Publish to npm](https://github.com/meidellkraft/powpow-cli/actions/workflows/publish.yml/badge.svg)](https://github.com/meidellkraft/powpow-cli/actions/workflows/publish.yml)
 
 # PowPow CLI
